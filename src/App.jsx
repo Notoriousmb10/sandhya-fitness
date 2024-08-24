@@ -17,7 +17,7 @@ function App() {
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
         }}>
-          <div className="overflow-x-hidden">
+          <div className="">
             <Navbar />
           </div>
           <div className="px-20">

@@ -2,29 +2,29 @@ import React from "react";
 import { CiSearch } from "react-icons/ci";
 import { BsCart3 } from "react-icons/bs";
 import { MdMenu } from "react-icons/md";
-import Logo  from "../assets/logo.jpg";
- 
+import Logo from "../assets/logo.jpg";
+
 const Navbar = () => {
   return (
-    <div className="">
+    <div className="flex justify-between items-center p-10">
       <div className="flex-shrink-0">
         <img src={Logo} height={120} width={120} alt="" />
       </div>
-      <div className="hidden lg:block max-md:hidden ">
-        <button className=" lg:m-3">Home</button>
-        <button className=" lg:m-3">Trainer</button>
-        <button className=" lg:m-3">Programs</button>
-        <button className=" lg:m-3">Pricing</button>
-        <button className=" lg:m-3">Blogs</button>
+      <div className="hidden lg:block">
+        <button className=" lg:m-8">Home</button>
+        <button className=" lg:m-8">Trainer</button>
+        <button className=" lg:m-8">Programs</button>
+        <button className=" lg:m-8">Pricing</button>
+        <button className=" lg:m-8">Blogs</button>
       </div>
-      <div className="flex justify-center items-center gap-10 ">
-        <CiSearch className="text-2xl" />
-        <BsCart3 className="text-2xl" />
-        <button className="px-4 py-2 rounded-xl bg-gray-400">Login</button>
+      <div className="flex gap-10 text-2xl">
+        <CiSearch />
+        <BsCart3 />
+        <MdMenu className="hidden max-md:block" />
       </div>
-      <div className="hidden max-md:block text-3xl">
-        <MdMenu />
-      </div>
+      {/* <div>
+        <button>Login</button>
+      </div> */}
     </div>
   );
 };

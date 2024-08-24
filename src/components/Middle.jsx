@@ -3,21 +3,24 @@ import Model from "../assets/model3.jpg";
 
 const Middle = () => {
   return (
-    <div className="bg-slate-300 flex flex-col sm:flex-row justify-between p-10 ">
+    <div className=" bg-gray-100 rounded-3xl max-sm:text-center flex justify-between max-md:flex-col p-6 ">
+      
       <div>
-        <img src={Model} alt="" className="h-96" />
+        <img src={Model} className="rounded-2xl md:h-96 object-cover shadow hover:shadow-black " alt="" />
       </div>
-      <div>
-        <h1></h1>
-        <p className="w-full max-w-full sm:max-w-sm">
+      <div className="">
+        <h1 className="font-palanquin font-semibold text-4xl my-6">Yet To Write</h1>
+        <p className="font-montserrat text-sm md:max-w-md">
           At Sandhya Fitness, we believe in the power of dedication, discipline,
           and determination. Our expert trainers and state-of-the-art facilities
           are designed to help you achieve your fitness goals, whether you're a
           beginner or a seasoned athlete. Join us and become part of a community
-          that values strength, wellness, and holistic growth. Your journey to a
+          that values strength, wsellness, and holistic growth. Your journey to a
           healthier, stronger you starts here.
         </p>
-        <button>View</button>
+      <div className="py-6">
+        <button>Explore More</button>
+      </div>
       </div>
     </div>
   );
