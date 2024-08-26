@@ -1,7 +1,7 @@
 # Gym Website Project
 
 Welcome to the Gym Website project! This project aims to create a comprehensive and user-friendly website for a gym, offering features such as trainer profiles, 
-class schedules, membership information, and more. Currently, the project is under construction, and we are actively working on adding features and improving the site.
+class schedules, membership information, and more. Currently, the project is under construction, and I am actively working on adding features and improving the site.
 
 ## Project Overview
 
@@ -17,7 +17,6 @@ The Gym Website will include:
 - Responsive design for both desktop and mobile devices.
 - User-friendly interface with easy navigation.
 - Interactive elements, such as dropdown menus and sidebars.
-- Integration with a content management system (CMS) or API for dynamic content.
 
 ## Getting Started
 
@@ -74,6 +73,8 @@ As this project is under construction, contributions are welcome! Please follow 
 3. Make your changes and commit them with clear messages.
 4. Push your changes to your forked repository.
 5. Open a pull request with a description of your changes.
+
+Note- The design of this project is referred from Youtube
 
 
 ## License
