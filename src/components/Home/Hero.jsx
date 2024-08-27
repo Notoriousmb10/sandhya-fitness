@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div
       className="flex flex-col md:flex-row md:justify-between 
-    min-w-md max-sm:text-center"
+    min-w-md max-sm:text-center py-16"
     >
       <div>
         <div>

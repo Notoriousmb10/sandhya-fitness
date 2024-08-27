@@ -8,6 +8,7 @@ import Bgimg from "./assets/bg.png";
 import MenuBar from "./components/MobileMenu/MenuBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider } from "./components/Context/SidebarContext";
+import ActiviHero from "./components/Activities/ActiviHero";
 
 function Homepage() {
   return (
@@ -81,10 +82,11 @@ function Pricing() {
       <div className="flex justify-center">
         <MenuBar />
       </div>
+      lj
     </>
   );
 }
-function Programs() {
+function Activities() {
   return (
     <>
       <section
@@ -98,6 +100,9 @@ function Programs() {
       >
         <Navbar />
       </section>
+      <div className="p-12">
+        <ActiviHero />
+      </div>
       <div className="flex justify-center">
         <MenuBar />
       </div>
@@ -132,7 +137,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/trainers" element={<Trainers />} />
-          <Route path="/programs" element={<Programs />} />
+          <Route path="/activities" element={<Activities />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/transformations" element={<Transformations />} />
         </Routes>

@@ -23,8 +23,8 @@ const Navbar = () => {
         <Link to="/trainers" className="lg:m-8">
           Trainer
         </Link>
-        <Link to="/programs" className="lg:m-8">
-          Programs
+        <Link to="/activities" className="lg:m-8">
+          Activities
         </Link>
         <Link to="/pricing" className="lg:m-8">
           Pricing

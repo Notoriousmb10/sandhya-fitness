@@ -13,8 +13,8 @@ const MenuBar = () => {
       <Link to='/trainers'  onClick={!setSideBarVisibility} className=" uppercase rounded-lg p-2 active:bg-slate-700">
         Trainers
       </Link>
-      <Link to='/programs' onClick={!setSideBarVisibility} className=" uppercase rounded-lg p-2 active:bg-slate-700">
-        Programs
+      <Link to='/activities' onClick={!setSideBarVisibility} className=" uppercase rounded-lg p-2 active:bg-slate-700">
+        Activities
       </Link>
       <Link to='/pricing' onClick={!setSideBarVisibility} className=" uppercase rounded-lg p-2 active:bg-slate-700">
         Pricing

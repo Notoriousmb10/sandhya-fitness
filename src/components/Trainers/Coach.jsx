@@ -9,11 +9,11 @@ const Coach = () => {
         Trainers
       </h1>
 
-      <div className="flex max-md:text-center flex-col gap-40">
+      <div className="flex max-md:text-center flex-col gap-10">
         {GymTrainers.map((data) => (
           <div
             key={data.id}
-            className="rounded-2xl border-2 p-6 px-10 md-plus:flex md-plus:justify-between"
+            className="rounded-2xl border-2 p-12 px-10 md-plus:flex md-plus:justify-between"
             style={{
               backgroundImage: `url(${trainerbg})`,
               backgroundRepeat: "no-repeat",
