@@ -3,6 +3,7 @@ import Hero from "./components/Home/Hero";
 import Navbar from "./components/Home/Navbar";
 import Coach from "./components/Trainers/Coach";
 import OurSide from "./components/Home/OurSide";
+import GymSection from "./components/Home/GymSection";
 import Middle from "./components/Home/Middle";
 import Bgimg from "./assets/bg.png";
 import MenuBar from "./components/MobileMenu/MenuBar";
@@ -29,6 +30,9 @@ function Homepage() {
           <Hero />
         </div>
       </section>
+      <div className="px-10 py-20">
+        <GymSection />
+      </div>
       <div className="px-20 py-20">
         <Middle />
       </div>

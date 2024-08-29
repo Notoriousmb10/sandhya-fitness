@@ -1,9 +1,19 @@
 // import React from 'react'
 import Model from "../../assets/model3.jpg";
+import trainerbg from "../../assets/trainerbg.png"
 
 const Middle = () => {
   return (
-    <div className=" bg-gray-100 rounded-3xl max-lg:text-center flex justify-between items-center max-lg:flex-col p-10 ">
+    <div
+      style={{
+        backgroundImage: `url(${trainerbg})`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+      className="rounded-3xl max-lg:text-center flex justify-between items-center max-lg:flex-col p-10 "
+    >
       <div>
         <img
           src={Model}
