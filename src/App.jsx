@@ -1,6 +1,6 @@
 import "./index.css";
 import Hero from "./components/Home/Hero";
-import Navbar from "./components/Home/Navbar";
+import HomeNavbar from "./components/Home/HomeNavbar";
 import Coach from "./components/Trainers/Coach";
 import OurSide from "./components/Home/OurSide";
 import GymSection from "./components/Home/GymSection";
@@ -10,21 +10,43 @@ import MenuBar from "./components/MobileMenu/MenuBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SidebarProvider } from "./components/Context/SidebarContext";
 import ActiviHero from "./components/Activities/ActiviHero";
+import AboutUs from "./components/Home/AboutUs";
+import HomePageVideo from './assets/HomePageVideo.mp4'
+import Navbar from "./components/Home/NavbarTwo";
 
 function Homepage() {
   return (
     <main className="relative">
       <section
         style={{
-          backgroundImage: `url(${Bgimg})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",
+          height: "100vh",  // Adjust height to fit the viewport
+          width: "100%",
+          position: "relative", // Ensures proper layering of content
         }}
       >
+    <video 
+      autoPlay 
+      muted 
+      loop 
+      style={{
+        position: "absolute",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        zIndex: "-1" // Keeps the video in the background
+      }}
+    >
+      <source src={HomePageVideo} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
         <div className="">
-          <Navbar />
+          <HomeNavbar />
         </div>
         <div className="px-20">
           <Hero />
@@ -41,6 +63,9 @@ function Homepage() {
       </div>
       <div className="flex justify-center">
         <MenuBar />
+      </div>
+      <div className="flex justify-center">
+        <AboutUs />
       </div>
     </main>
   );

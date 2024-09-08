@@ -9,29 +9,26 @@ const Hero = () => {
     >
       <div>
         <div>
-          <h1 className="text-4xl font-bold mb-10">
-            Journey Towards New You <br />
-            Starts Here...
+          <h1 className="text-4xl max-md:text-center font-poppins font-bold mb-10">
+            One Step Closer To <br />
+            <span className="text-coral-red md-plus:text-6xl text-5xl">Greatness!</span>{" "}
           </h1>
-          <p className="text-base w-full max-sm:text-center md:max-w-sm pb-10 ">
-            At <span className="underline">Sandhya Fitness</span>, we believe in
-            the power of transformation. Our state-of-the-art facilities and
-            expert trainers are dedicated to helping you achieve your fitness
-            goals and elevate your life. Join us today and take the first step
-            towards a healthier, stronger you.
+          <p className="text-base w-full max-sm:text-center font-montserrat md:max-w-sm pb-10 ">
+            At <span className="italic font-bold">Sandhya Fitness</span>, we
+            believe in the power of transformation. Our state-of-the-art
+            facilities and expert trainers are dedicated to helping you achieve
+            your fitness goals and elevate your life. Join us today and take the
+            first step towards a healthier, stronger you.
           </p>
         </div>
         <div>
-          <button className="border-coral-red border-2 p-2 m-2 rounded-lg">
+          <button className="text-white active:bg-black bg-coral-red border-2 p-2 m-2 rounded-lg">
             Join Now
           </button>
-          <button className="border-coral-red border-2 p-2 m-2 rounded-lg">
+          <button className="text-white active:bg-black bg-coral-red border-2 p-2 m-2 rounded-lg">
             Sneak Us
           </button>
         </div>
-      </div>
-      <div>
-        <img src={dumbell} alt="" />
       </div>
     </div>
   );
