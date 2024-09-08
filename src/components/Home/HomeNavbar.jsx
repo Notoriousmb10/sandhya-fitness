@@ -15,19 +15,19 @@ const Navbar = () => {
         <img src={Logo} height={120} width={120} alt="" />
       </div>
       <div className="hidden  lg:block">
-        <Link to="/" className="lg:m-8">
+        <Link to="/" className="lg:m-8 underline-effect ">
           Home
         </Link>
-        <Link to="/trainers" className="lg:m-8 md-plus:text-black">
+        <Link to="/trainers" className="lg:m-8 underline-effect">
           Trainer
         </Link>
-        <Link to="/activities" className="lg:m-8 md-plus:text-black">
+        <Link to="/activities" className="lg:m-8 underline-effect">
           Activities
         </Link>
-        <Link to="/pricing" className="lg:m-8 md-plus:text-white">
+        <Link to="/pricing" className="lg:m-8 underline-effect md-plus:text-white">
           Pricing
         </Link>
-        <Link to="/transformations" className="lg:m-8 md-plus:text-white">
+        <Link to="/transformations" className="lg:m-8 underline-effect md-plus:text-white">
           Transformations
         </Link>
       </div>

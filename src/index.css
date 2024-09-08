@@ -3,3 +3,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@layer utilities {
+  .underline-effect {
+    @apply relative inline-block;
+  }
+
+  .underline-effect::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px; /* Adjust the thickness of the underline */
+    background-color: currentColor; /* Use the current text color */
+    bottom: -2px; /* Slightly below the text */
+    left: 50%;
+    transform: translateX(0%);
+    transition: width 0.4s ease, left 0.4s ease;
+  }
+
+  .underline-effect:hover::after {
+    width: 100%;
+    left: 0;
+    transform: translateX(0);
+  }
+}
+
+
+
