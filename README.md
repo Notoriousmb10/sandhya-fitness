@@ -1,7 +1,7 @@
 # Gym Website Project
 
-![image](https://github.com/user-attachments/assets/6804fb6d-37ab-488f-a354-3b58e304a31d)
-**Raw Interface, UI Enhancing Is Left**
+([image](https://github.com/user-attachments/assets/5b7c33a8-c5d9-44c6-b7cf-684b671fc249)
+)
 
 
 Welcome to the Gym Website project! This project aims to create a comprehensive and user-friendly website for a gym, offering features such as trainer profiles, 
