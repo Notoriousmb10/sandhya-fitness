@@ -15,19 +15,19 @@ const Navbar = () => {
         <img src={Logo} height={120} width={120} alt="" />
       </div>
       <div className="hidden  lg:block">
-        <Link to="/" className="lg:m-8">
+        <Link to="/" className="lg:m-8 underline-effect">
           Home
         </Link>
-        <Link to="/trainers" className="lg:m-8">
+        <Link to="/trainers" className="lg:m-8 underline-effect">
           Trainer
         </Link>
-        <Link to="/activities" className="lg:m-8">
+        <Link to="/activities" className="lg:m-8 underline-effect">
           Activities
         </Link>
-        <Link to="/pricing" className="lg:m-8 ">
+        <Link to="/pricing" className="lg:m-8 underline-effect">
           Pricing
         </Link>
-        <Link to="/transformations" className="lg:m-8 ">
+        <Link to="/transformations" className="lg:m-8 underline-effect">
           Transformations
         </Link>
       </div>
@@ -41,7 +41,7 @@ const Navbar = () => {
           <BsCart3 />
         </div>
         <button
-          className="font-thin text-sm border-2 border-black transition-colors duration-2000  px-4 rounded-md 
+          className="font-thin text-sm  border-black transition-colors duration-2000  px-4 rounded-md 
         active:text-white active:bg-black bg-coral-red py-1 text-slate-100"
         >
           Login
