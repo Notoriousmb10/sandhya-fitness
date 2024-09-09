@@ -103,7 +103,7 @@ const Login = () => {
               <div className="flex justify-between w-full">
                 <p className="text-sm">
                   Don’t have an account?{' '}
-                  <a href="#" className="text-blue-500">Sign Up</a>
+                  <a href="/signup" className="text-blue-500">Sign Up</a>
                 </p>
               </div>
             </div>
