@@ -140,7 +140,7 @@ const SignUp = () => {
               <div className="flex justify-between w-full">
                 <p className="text-sm">
                   Already have an account?{' '}
-                  <a href="#" className="text-blue-500">Log In</a>
+                  <a href="/login" className="text-blue-500">Log In</a>
                 </p>
               </div>
             </div>
