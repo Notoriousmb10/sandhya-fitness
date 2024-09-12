@@ -8,6 +8,8 @@ import Pricing from "./pages/Pricing";
 import Transformations from "./pages/Transformations";
 import Login from "./pages/Login"
 import SignUp from "./pages/SignUp";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsServices from "./pages/TermsServices";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
           <Route path="/activities" element={<Activities />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/transformations" element={<Transformations />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/termsservices" element={<TermsServices />} />
         </Routes>
       </BrowserRouter>
     </SidebarProvider>

@@ -1,6 +1,6 @@
 import React from "react";
 import dumbell from "../../assets/dumbell.png";
-
+import { GoogleLogin } from "@react-oauth/google";
 const Hero = () => {
   return (
     <div
@@ -11,7 +11,9 @@ const Hero = () => {
         <div>
           <h1 className="text-4xl max-md:text-center font-poppins font-bold mb-10">
             One Step Closer To <br />
-            <span className="text-coral-red md-plus:text-6xl text-5xl">Greatness!</span>{" "}
+            <span className="text-coral-red md-plus:text-6xl text-5xl">
+              Greatness!
+            </span>{" "}
           </h1>
           <p className="text-base w-full max-sm:text-center font-montserrat md:max-w-sm pb-10 ">
             At <span className="italic font-bold">Sandhya Fitness</span>, we
@@ -28,6 +30,7 @@ const Hero = () => {
           <button className="text-white active:bg-black bg-coral-red border-2 p-2 m-2 rounded-lg">
             Sneak Us
           </button>
+         
         </div>
       </div>
     </div>
