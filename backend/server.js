@@ -1,7 +1,7 @@
 const express = require('express');
 const sessionMiddleware = require('./config/session-express');
 const connectDB = require('./config/db');
-const userRoutes = require('./routes/userRoute');
+const userRouter = require('./routes/userRoute');
 const app = express();
 const PORT = 5000;
 const cors = require('cors');
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
 app.use('/api/user/', userRouter);
 // User routes
-app.use('/user', userRoutes);
+app.use('/user', userRouter);
 
 // Start the server
 app.listen(PORT, () => {
