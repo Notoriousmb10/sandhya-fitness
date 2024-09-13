@@ -10,9 +10,11 @@ import Login from "./pages/Login"
 import SignUp from "./pages/SignUp";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsServices from "./pages/TermsServices";
+import { UserProvider } from "./components/Context/UserContext";
 
 function App() {
   return (
+    <UserProvider>
     <SidebarProvider>
       <BrowserRouter>
         <Routes>
@@ -28,6 +30,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </SidebarProvider>
+    </UserProvider>
   );
 }
 

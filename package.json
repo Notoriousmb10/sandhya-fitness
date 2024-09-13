@@ -5,14 +5,15 @@
   "scripts": {
     "start": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend run start\"",
     "frontend": "npm --prefix frontend run dev",
-    "backend": "npm --prefix backend run start",
+    "backend": "nodemon --prefix backend run start",
     "dev": "concurrently \"npm --prefix frontend run dev\" \"npm --prefix backend run dev\"",
     "build": "npm --prefix frontend run build",
     "lint": "eslint .",
     "preview": "npm --prefix frontend run preview"
   },
   "devDependencies": {
-    "concurrently": "^9.0.0"
+    "concurrently": "^9.0.0",
+    "nodemon": "^3.1.4"
   },
   "dependencies": {
     "@react-oauth/google": "^0.12.1",

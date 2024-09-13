@@ -1,11 +1,14 @@
 // src/pages/SignUp.jsx
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import loginimg from "../assets/loginimg1.jpg";
 import axios from "axios";
 import Navbar from "../components/Home/NavbarTwo";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../src/components/Context/UserContext";
+
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -15,6 +18,8 @@ const SignUp = () => {
   const [otp, setOtp] = useState("");
   const [isOtpSent, setIsOtpSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -73,22 +78,30 @@ const SignUp = () => {
       email,
       given_name: firstname,
       family_name: lastname,
+      picture: photo,
     } = userCredential;
-  
+    const age = 18;
+
     try {
       await axios.post("http://localhost:5000/api/user/signup", {
         email,
         firstname,
         lastname,
+        age,
+        photo
       });
-      console.log("User Data Has Been Sent To Server Successfully");
+      console.log("User Data Has Been Sent To Server Successfully", photo);
+      const userInfo = {email, firstname, lastname, age, photo};
+      setUser(userInfo)
+      localStorage.setItem("user", JSON.stringify(userInfo));
+      navigate("/");
     } catch (error) {
       console.error("Error sending user data to server", error);
     }
   };
 
   const handleLoginError = () => {
-    console.log('Google Login Failed');
+    console.log("Google Login Failed");
   };
 
   return (
