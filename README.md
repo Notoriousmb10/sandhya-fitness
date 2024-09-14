@@ -40,40 +40,6 @@ npm install
 Start the development server:
 npm start
 
-Project Structure 
-sandhya-fitness/
-├── public/
-│   ├── index.html
-│   └── ...
-├── src/
-│   ├── assets/
-│   │   └── logo.jpg
-│   ├── components/
-│   │   ├── Context/
-│   │   │   ├── SidebarContext.js
-│   │   │   └── UserContext.js
-│   │   ├── Home/
-│   │   │   ├── HomeNavbar.jsx
-│   │   │   └── NavbarTwo.jsx
-│   │   └── ...
-│   ├── hooks/
-│   │   └── useClickOutside.js
-│   ├── pages/
-│   │   ├── Homepage.jsx
-│   │   ├── Trainers.jsx
-│   │   ├── Pricing.jsx
-│   │   ├── Transformations.jsx
-│   │   ├── Login.jsx
-│   │   ├── SignUp.jsx
-│   │   ├── PrivacyPolicy.jsx
-│   │   └── TermsServices.jsx
-│   ├── App.jsx
-│   ├── index.js
-│   └── ...
-├── package.json
-└── README.md
-
-
 
 
 ### Summary
