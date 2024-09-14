@@ -19,10 +19,13 @@ const Navbar = () => {
     navigate("/login");
   };
 
-  const handleLogout = () => {
-    setUser(null);
-    localStorage.removeItem("user");
-    navigate("/login");
+  // const handleLogout = () => {
+  //   setUser(null);
+  //   localStorage.removeItem("user");
+  //   navigate("/login");
+  // };
+  const navigateToProfile = () => {
+    navigate('/profile')
   };
 
   const handleClickOutside = (event) => {
@@ -78,7 +81,7 @@ const Navbar = () => {
           <div className="relative flex items-center gap-2" ref={dropdownRef}>
             <button
               className="bg-coral-red  flex hover:bg-red-400 items-center gap-2 p-2 rounded-md"
-              onClick={() => setDropdownOpen(!dropdownOpen)}
+              onClick={navigateToProfile}
             >
               <img
                 src={user.photo}
@@ -92,18 +95,7 @@ const Navbar = () => {
               <span className="font-bold text-slate-100 text-sm">
                 {user.firstname}
               </span>
-              <FaCaretDown className="text-slate-100" /> {/* Arrow icon */}
             </button>
-            {dropdownOpen && (
-              <div className="absolute right-0 mt-20  w-20 bg-coral-red  rounded-md shadow-lg">
-                <button
-                  className="block w-full text-left px-4 font-bold py-2 text-sm text-gray-700 hover:bg-red-400"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </button>
-              </div>
-            )}
           </div>
         ) : (
           <button
@@ -114,11 +106,11 @@ const Navbar = () => {
             Login
           </button>
         )}
-        <div className="border-2 cursor-pointer max-md:block hidden rounded-sm" onClick={toggleSidebar}>
-          <MdMenu
-            className=" text-white "
-            
-          />
+        <div
+          className="border-2 cursor-pointer max-md:block hidden rounded-sm"
+          onClick={toggleSidebar}
+        >
+          <MdMenu className=" text-white " />
         </div>
       </div>
     </div>
