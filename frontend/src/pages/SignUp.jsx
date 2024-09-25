@@ -7,7 +7,7 @@ import Navbar from "../components/Home/NavbarTwo";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-import { UserContext } from "../../src/components/Context/UserContext";
+import { UserContext } from "../../src/components/Context/userContext";
 
 
 const SignUp = () => {

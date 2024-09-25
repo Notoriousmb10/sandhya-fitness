@@ -6,7 +6,7 @@ import { FaCaretDown } from "react-icons/fa"; // Import the arrow icon
 import Logo from "../../assets/logo.jpg";
 import { Link, useNavigate } from "react-router-dom";
 import { SidebarContext } from "../Context/SidebarContext";
-import { UserContext } from "../Context/UserContext";
+import { UserContext } from "../Context/userContext";
 
 const NavbarTwo = () => {
   const { toggleSidebar } = useContext(SidebarContext);

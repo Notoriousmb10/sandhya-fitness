@@ -10,7 +10,9 @@ import Login from "./pages/Login"
 import SignUp from "./pages/SignUp";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsServices from "./pages/TermsServices";
-import { UserProvider } from "./components/Context/UserContext";
+import Security from "./pages/Security";
+import { UserProvider } from "./components/Context/userContext";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -27,6 +29,9 @@ function App() {
           <Route path="/transformations" element={<Transformations />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsservices" element={<TermsServices />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/security" element={<Security />} />
+
         </Routes>
       </BrowserRouter>
     </SidebarProvider>
