@@ -2,8 +2,9 @@ const express = require("express");
 const sessionMiddleware = require("./config/session-express");
 const connectDB = require("./config/db");
 const userRouter = require("./routes/userRoute");
+const paymentroutes = require("./routes/payment.routes");
 const app = express();
-const PORT = 5000;
+const PORT = 3001;
 const cors = require("cors");
 const mongoose = require("mongoose");
 app.use(
@@ -33,6 +34,8 @@ app.get("/", (req, res) => {
 app.use("/api/user/", userRouter);
 // User routes
 app.use("/user", userRouter);
+
+app.use("/pay", paymentroutes);
 
 // Start the server
 app.listen(PORT, () => {
