@@ -249,32 +249,32 @@ export default function PricingCard() {
               <ListItemDecorator>
                 <Check />
               </ListItemDecorator>
-              Virtual Credit Cards
+              High-Intensity Workouts
             </ListItem>
             <ListItem>
               <ListItemDecorator>
                 <Check />
               </ListItemDecorator>
-              Financial Analytics
-            </ListItem>
+              Endurance Boost
+              </ListItem>
+            <ListItem>
+              <ListItemDecorator>
+                <Check className="text-black"/>
+              </ListItemDecorator>
+              Cardio Circuits
+              </ListItem>
             <ListItem>
               <ListItemDecorator>
                 <Check />
               </ListItemDecorator>
-              Checking Account
-            </ListItem>
+              Functional Fitness
+              </ListItem>
             <ListItem>
               <ListItemDecorator>
                 <Check />
               </ListItemDecorator>
-              API Integration
-            </ListItem>
-            <ListItem>
-              <ListItemDecorator>
-                <Check />
-              </ListItemDecorator>
-              Cancel Anytime
-            </ListItem>
+              Strength Training
+              </ListItem>
           </List>
           <Divider inset="none" />
           <CardActions>

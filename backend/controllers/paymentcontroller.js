@@ -5,9 +5,9 @@ dotenv.config();
 const razorpayInstance = createRazorpayInstance();
 // Create order function
 exports.createOrder = async (req, res) => {
-    const { amount } = req.body; // Get amount from frontend
+    const { amount } = req.body; 
     const options = {
-        amount: amount * 100, // Convert to smallest unit (paise for INR)
+        amount: amount * 100, 
         currency: 'INR',
         receipt: 'receipt_order_1',
     };

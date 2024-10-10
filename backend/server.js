@@ -3,9 +3,11 @@ const sessionMiddleware = require("./config/session-express");
 const connectDB = require("./config/db");
 const userRouter = require("./routes/userRoute");
 const app = express();
-const PORT = 5000;
+const PORT = 3001;
 const cors = require("cors");
 const mongoose = require("mongoose");
+const { createOrder } = require("./controllers/paymentcontroller");
+const { verifyPayment } = require("./controllers/paymentcontroller");
 
 app.use(
   cors({
@@ -27,9 +29,8 @@ app.use(express.json());
 app.use(sessionMiddleware);
 
 // Basic route
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+app.post("/pay/createOrder", createOrder);
+app.post("/pay/verifyPayment", verifyPayment);
 
 app.use("/api/user/", userRouter);
 // User routes

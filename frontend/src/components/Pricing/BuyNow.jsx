@@ -13,34 +13,18 @@ import { useState } from "react";
 import BoxMui from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
-export default function ResponsiveModal({Description, PlanName, color}) {
+export default function ResponsiveModal({ Description, PlanName, color }) {
   const [open, setOpen] = React.useState(false);
-  const [month, setMonth] = useState(4);
-  const [calprice, setCalprice] = useState(1800);
+  const [month, setMonth] = useState(1);
+  const [calprice, setCalprice] = useState(500);
   const [lockRadio, setlockRadio] = useState(false);
   const [selectedPlan, setSelectedPlan] = React.useState({
     name: PlanName,
     price: 0,
   });
 
-  const plans = [
-    { name: "1Month", price: 500 },
-    { name: "2Month", price: 1000 },
-    { name: "3Month", price: 1500 },
-  ];
-
-  const handlePlanSelect = (event) => {
-    if(setlockRadio === true){
-      console.log("Please select the months first");
-    }else{
-    const selectedPlan = plans.find((plan) => plan.name === event.target.value);
-    setSelectedPlan(selectedPlan);
-  };
-}
-
-  // Razorpay payment integration
   const handlePayment = async () => {
-    if (!selectedPlan.price || selectedPlan.price <= 0) {
+    if (calprice <= 0) {
       console.error("Invalid price provided");
       return;
     }
@@ -50,17 +34,17 @@ export default function ResponsiveModal({Description, PlanName, color}) {
       const orderResponse = await axios.post(
         "http://localhost:3001/pay/createOrder",
         {
-          amount: selectedPlan.price,
+          amount: calprice,
         }
       );
 
       const { orderId, key_id } = orderResponse.data;
 
       const options = {
-        key: process.env.VITE_RAZORPAY_KEY_ID, // Razorpay key_id from backend
-        amount: selectedPlan.price * 100, // Convert price to paise
+        key: key_id, // Razorpay key_id from backend
+        amount: calprice * 100, // Convert price to paise
         currency: "INR",
-        name: selectedPlan.name,
+        name: month,
         description: Description || "Purchase Description",
         order_id: orderId, // Use the order ID from the backend
         handler: async function (response) {
@@ -85,7 +69,7 @@ export default function ResponsiveModal({Description, PlanName, color}) {
           }
         },
         prefill: {
-          name: "User Name",
+          name: "User  Name",
           email: "user@example.com",
         },
         theme: {
@@ -99,19 +83,26 @@ export default function ResponsiveModal({Description, PlanName, color}) {
       console.error("Error creating Razorpay order", error);
     }
   };
-  
+
   const handleMonthChange = (event) => {
-    setlockRadio(true)
+    setlockRadio(true);
     const value = parseInt(event.target.value, 10);
     setMonth(value);
-    setCalprice(value * 450);
-    console.log(month, calprice); // Add this line to check the values
-
-  }
+    if (month === 1) {
+      setCalprice(value * 500);
+    } else {
+      setCalprice(value * 450);
+    }
+  };
 
   return (
     <React.Fragment>
-      <Button variant="outlined" sx={{border:'none' ,width:'100%', color:{color}}} color="neutral" onClick={() => setOpen(true)}>
+      <Button
+        variant="outlined"
+        sx={{ border: "none", width: "100%", color: { color } }}
+        color="neutral"
+        onClick={() => setOpen(true)}
+      >
         See Plans
       </Button>
       <Modal open={open} onClose={() => setOpen(false)}>
@@ -127,60 +118,50 @@ export default function ResponsiveModal({Description, PlanName, color}) {
 
           <FormControl>
             <FormLabel>Select a Plan</FormLabel>
-            <RadioGroup name="plans" onChange={handlePlanSelect}>
-              {plans.map((plan) => (
-                <Radio
-                  key={plan.name}
-                  value={plan.name}
-                  label={`${plan.name} - ₹${plan.price}`}
-                />
-              ))}
-              <BoxMui
-                component="form"
-                sx={{
-                  "& .MuiTextField-root": { m: 1, width: "15ch" },
-                  paddingTop: 2,
+
+            <BoxMui
+              component="form"
+              sx={{
+                "& .MuiTextField-root": { m: 1, width: "15ch" },
+                paddingTop: 2,
+              }}
+              noValidate
+              autoComplete="off"
+            >
+              <TextField
+                id="outlined-number"
+                label="Months"
+                type="number"
+                value={month}
+                onInput={handleMonthChange}
+                slotProps={{
+                  inputLabel: {
+                    shrink: true,
+                  },
                 }}
-                noValidate
-                autoComplete="off"
-              >
-                <TextField
-                  id="outlined-number"
-                  label="Months"
-                  type="number"
-                  value={month}
-                  onInput={handleMonthChange}
-                  slotProps={{
+                inputProps={{
+                  min: 1,
+                  max: 12,
+                }}
+              />
+              <TextField
+                id="filled-read-only-input"
+                label={""}
+                value={calprice}
+                variant="filled"
+                slotProps={{
+                  input: {
                     inputLabel: {
                       shrink: true,
                     },
-                  }}
-                  inputProps={{
-                    min: 4,
-                    max: 12,
-                  }}
-                />
-                <TextField
-                  id="filled-read-only-input"
-                  label={''}
-                  value={calprice}
-                  variant="filled"
-                  slotProps={{
-                    input: {
-                      inputLabel: {
-                        shrink: true,
-                    },
-                  }
-                  }}
-                />
-              </BoxMui>
-            </RadioGroup>
+                  },
+                }}
+              />
+            </BoxMui>
           </FormControl>
-          
 
           <Typography textColor="text.tertiary" mt={2}>
-            You are about to buy the {selectedPlan.name} for ₹
-            {selectedPlan.price}.
+            {`You are about to buy the ${month} Month for ₹${calprice}`}
           </Typography>
 
           <Box
