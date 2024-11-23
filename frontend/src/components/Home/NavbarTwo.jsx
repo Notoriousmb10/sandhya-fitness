@@ -56,18 +56,11 @@ const NavbarTwo = () => {
         <Link to="/pricing" className="lg:m-8 underline-effect">
           Pricing
         </Link>
-        <Link to="/transformations" className="lg:m-8 underline-effect">
-          Transformations
-        </Link>
+        
       </div>
 
       <div className="flex items-center gap-6 text-2xl">
-        <div className="p-2 rounded-full cursor-pointer md-plus:text-white md-plus:font-bold active:bg-slate-400 transition-colors duration-2000">
-          <CiSearch />
-        </div>
-        <div className="p-2 rounded-full cursor-pointer md-plus:text-white md-plus:font-bold active:bg-slate-400 transition-colors duration-2000">
-          <BsCart3 />
-        </div>
+        
         {user ? (
           <div className="relative flex items-center gap-2" ref={dropdownRef}>
             <button

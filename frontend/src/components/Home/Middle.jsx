@@ -16,7 +16,7 @@ const Middle = () => {
     >
       <div>
         <img
-          src={Model}
+          src='https://images.pexels.com/photos/1229356/pexels-photo-1229356.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
           className="rounded-2xl h-96 w-full object-contain hover:shadow-black "
           alt=""
         />

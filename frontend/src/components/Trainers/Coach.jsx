@@ -1,6 +1,7 @@
 import React from "react";
 import { GymTrainers } from "../Content";
 import trainerbg from "../../assets/trainerbg.png";
+import { Link } from "react-router-dom";
 
 const Coach = () => {
   return (
@@ -38,12 +39,12 @@ const Coach = () => {
               </p>
               <div className="max-md:flex gap-4 flex max-md:justify-center ">
                 {data.skills.map((skills) => (
-                  <button
+                  <Link to={`https://www.google.com/search?q=${encodeURIComponent(skills)}`}
                     className="border-2 p-2 px-4 bg-orange-200 rounded-lg hover:text-white 
                   hover:bg-orange-300 font-palanquin"
                   >
                     {skills}
-                  </button>
+                  </Link>
                 ))}
               </div>
             </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import dumbell from "../../assets/dumbell.png";
 import { GoogleLogin } from "@react-oauth/google";
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div
@@ -24,13 +25,12 @@ const Hero = () => {
           </p>
         </div>
         <div>
-          <button className="text-white active:bg-black bg-coral-red border-2 p-2 m-2 rounded-lg">
+          <Link to="/pricing" className="text-white active:bg-black bg-coral-red border-2 p-2 m-2 rounded-lg">
             Join Now
-          </button>
-          <button className="text-white active:bg-black bg-coral-red border-2 p-2 m-2 rounded-lg">
+          </Link>
+          <Link to='https://www.instagram.com/sandhyafitness/?igsh=OWQ0ZDIweThieHJz' className="text-white active:bg-black bg-coral-red border-2 p-2 m-2 rounded-lg">
             Sneak Us
-          </button>
-         
+          </Link>
         </div>
       </div>
     </div>

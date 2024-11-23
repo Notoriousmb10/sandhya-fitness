@@ -25,7 +25,7 @@ const Navbar = () => {
   //   navigate("/login");
   // };
   const navigateToProfile = () => {
-    navigate('/profile')
+    navigate("/profile");
   };
 
   const handleClickOutside = (event) => {
@@ -46,37 +46,29 @@ const Navbar = () => {
       <div className="flex-shrink-0">
         <img src={Logo} height={120} width={120} alt="Logo" />
       </div>
-      <div className="hidden lg:block lg:ml-16">
-        <Link to="/" className="lg:m-8 underline-effect">
-          Home
-        </Link>
-        <Link to="/trainers" className="lg:m-8 underline-effect">
-          Trainer
-        </Link>
-        <Link to="/activities" className="lg:m-8 underline-effect">
-          Activities
-        </Link>
-        <Link
-          to="/pricing"
-          className="lg:m-8 underline-effect md-plus:text-white"
-        >
-          Pricing
-        </Link>
-        <Link
-          to="/transformations"
-          className="lg:m-8 underline-effect md-plus:text-white"
-        >
-          Transformations
-        </Link>
+      <div className="hidden lg:flex lg:gap-4 lg:flex-row lg:ml-16">
+        <div>
+          <Link to="/" className="lg:m-8 underline-effect">
+            Home
+          </Link>
+          <Link to="/trainers" className="lg:m-8 underline-effect">
+            Trainer
+          </Link>
+        </div>
+        <div>
+          <Link to="/activities" className="lg:m-8 text-white underline-effect">
+            Activities
+          </Link>
+          <Link
+            to="/pricing"
+            className="lg:m-8 underline-effect md-plus:text-white"
+          >
+            Pricing
+          </Link>
+        </div>
       </div>
 
       <div className="flex items-center gap-6 text-2xl">
-        <div className="p-2 rounded-full cursor-pointer md-plus:text-white md-plus:font-bold active:bg-slate-400 transition-colors duration-2000">
-          <CiSearch />
-        </div>
-        <div className="p-2 rounded-full cursor-pointer md-plus:text-white md-plus:font-bold active:bg-slate-400 transition-colors duration-2000">
-          <BsCart3 />
-        </div>
         {user ? (
           <div className="relative flex items-center gap-2" ref={dropdownRef}>
             <button
